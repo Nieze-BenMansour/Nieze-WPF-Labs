@@ -1,0 +1,23 @@
+﻿<Window x:Class="FormationWPF.Demo2.ExempleWindow_INotify"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FormationWPF.Demo2"
+        mc:Ignorable="d"
+        Title="ExempleWindow_INotify" Height="450" Width="800">
+    <Window.DataContext>
+        <local:OtherUserViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <TextBox x:Name="ageTb" Text="{Binding Age, Mode=TwoWay}" HorizontalAlignment="Left" Margin="290,137,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="162" FontSize="22"/>
+        <TextBox x:Name="nameTb" Text="{Binding Name, Mode=TwoWay}" HorizontalAlignment="Left" Margin="290,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="162" FontSize="22"/>
+        <TextBox x:Name="skillsTb" Text="{Binding Skills, Mode=TwoWay}" HorizontalAlignment="Left" Margin="290,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="286" FontSize="22"/>
+        <Label Content="Age" HorizontalAlignment="Left" Margin="220,133,0,0" VerticalAlignment="Top" FontSize="22" Width="66"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="220,176,0,0" VerticalAlignment="Top" FontSize="22" Width="79"/>
+        <Label Content="Skills" HorizontalAlignment="Left" Margin="220,224,0,0" VerticalAlignment="Top" FontSize="22" Width="78"/>
+        <Label Content="Exemple - INotifyPropertyChanged" HorizontalAlignment="Left" Margin="220,35,0,0" VerticalAlignment="Top" FontSize="22" Width="407" FontWeight="Bold"/>
+        <Button Content="Exemple - ObservableObject" HorizontalAlignment="Left" Margin="433,361,0,0" VerticalAlignment="Top" Height="49" Width="344" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
+
+    </Grid>
+</Window>

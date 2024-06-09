@@ -19,17 +19,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab4", "Lab4", "{B45C9535-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab5", "Lab5", "{4769F0F1-1C77-4C0A-A189-2A84EF2763CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nieze.WPF.Labs.Lab1", "Labs\Lab1\Nieze.WPF.Labs.Lab1\Nieze.WPF.Labs.Lab1.csproj", "{D27A734B-2F30-4DB4-A9D3-9CF2ADB9D775}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nieze.WPF.Labs.Lab1", "Labs\Lab1\Nieze.WPF.Labs.Lab1\Nieze.WPF.Labs.Lab1.csproj", "{D27A734B-2F30-4DB4-A9D3-9CF2ADB9D775}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nieze.WPF.Labs.Lab2", "Labs\Lab2\Nieze.WPF.Labs.Lab2\Nieze.WPF.Labs.Lab2.csproj", "{C60BE968-E79D-43E9-A825-EB3152F7521F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nieze.WPF.Labs.Lab2", "Labs\Lab2\Nieze.WPF.Labs.Lab2\Nieze.WPF.Labs.Lab2.csproj", "{C60BE968-E79D-43E9-A825-EB3152F7521F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nieze.WPF.Labs.Lab3", "Labs\Lab3\Nieze.WPF.Labs.Lab3\Nieze.WPF.Labs.Lab3.csproj", "{792CCD57-6D7D-4EB4-9AD4-CEEC519646EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nieze.WPF.Labs.Lab3", "Labs\Lab3\Nieze.WPF.Labs.Lab3\Nieze.WPF.Labs.Lab3.csproj", "{792CCD57-6D7D-4EB4-9AD4-CEEC519646EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nieze.WPF.Labs.Lab4", "Labs\Lab4\Nieze.WPF.Labs.Lab4\Nieze.WPF.Labs.Lab4.csproj", "{43F05DA4-8A3B-4DC0-A781-71DFE848B769}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nieze.WPF.Labs.Lab4", "Labs\Lab4\Nieze.WPF.Labs.Lab4\Nieze.WPF.Labs.Lab4.csproj", "{43F05DA4-8A3B-4DC0-A781-71DFE848B769}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nieze.WPF.Labs.Lab5", "Labs\Lab5\Nieze.WPF.Labs.Lab5\Nieze.WPF.Labs.Lab5.csproj", "{05502079-4ECA-4239-B563-33E2BAF21323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nieze.WPF.Labs.Lab5", "Labs\Lab5\Nieze.WPF.Labs.Lab5\Nieze.WPF.Labs.Lab5.csproj", "{05502079-4ECA-4239-B563-33E2BAF21323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nieze.WPF.Demos.Demo2", "Demos\Nieze.WPF.Demos.Demo2\Nieze.WPF.Demos.Demo2.csproj", "{77CCEA47-6177-4765-9C13-B359734816C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nieze.WPF.Demos.Demo2", "Demos\Nieze.WPF.Demos.Demo2\Nieze.WPF.Demos.Demo2.csproj", "{77CCEA47-6177-4765-9C13-B359734816C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

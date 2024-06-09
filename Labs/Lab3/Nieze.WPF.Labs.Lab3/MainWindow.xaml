@@ -5,8 +5,142 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nieze.WPF.Labs.Lab3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="431" Width="625">
+    <Window.Resources>
+        <!-- Define UserViewModel -->
+        <local:UserViewModel x:Key="UserViewModel"/>
+        <!-- Style for Flat TextBox -->
+        <Style x:Key="FlatTextBox" TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style x:Key="FlatComboBox" TargetType="ComboBox">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <!-- Center-aligned Menu Buttons -->
+        <DockPanel DockPanel.Dock="Top" Background="LightBlue">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Home" Margin="5" Padding="10"/>
+                <Button Content="Profile" Margin="5" Padding="10"/>
+                <Button Content="Settings" Margin="5" Padding="10"/>
+                <Button Content="Help" Margin="5" Padding="10"/>
+            </StackPanel>
+        </DockPanel>
+        <!-- Copyright Text -->
+        <TextBlock DockPanel.Dock="Bottom" Background="LightYellow" HorizontalAlignment="Left"   Padding="5">
+            <Run Text="Copyright © "/>
+            <Run Text="2024"/>
+            <Run Text=" Your Company Name. All rights reserved."/>
+        </TextBlock>
+        <!-- Canvas Elements -->
+        <StackPanel x:Name="canvasContainer" DockPanel.Dock="Left" Background="Lavender">
+            <!-- First Square Canvas -->
+            <Canvas x:Name="firstCanvas" Width="100" Height="100" Background="Red" Margin="5">
+                <Rectangle Width="100" Height="100" Fill="Blue"/>
+            </Canvas>
+            <!-- Circle Canvas -->
+            <Canvas x:Name="circleCanvas" Width="100" Height="100" Background="Green" Margin="5">
+                <Ellipse Width="100" Height="100" Fill="Yellow"/>
+            </Canvas>
+            <!-- Second Square Canvas -->
+            <Canvas x:Name="secondCanvas" Width="100" Height="100" Background="Orange" Margin="5">
+                <Rectangle Width="100" Height="100" Fill="Purple"/>
+            </Canvas>
+        </StackPanel>
+        <!-- Main Content Area -->
+        <DockPanel Background="Bisque">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <!-- Grid for Buttons -->
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Button 
+            Height="30px"
+            Margin="10,10,10,10"
+            Content="Button1"/>
+                    <Button 
+            Height="30px"
+            Margin="10,10,10,10"
+            Content="Button2"/>
+                    <Button 
+            Height="30px"
+            Margin="10,10,10,10"
+            Content="Button3"/>
+                    <Button 
+            Height="30px"
+            Margin="10,10,10,10"
+            Content="Button4"/>
+                    <Button 
+            Height="30px"
+            Margin="10,10,10,10"
+            Content="Button5"/>
+                    <Button 
+            Height="30px"
+            Margin="10,10,10,10"
+            Content="Button6"/>
+                </WrapPanel>
 
-    </Grid>
+            </StackPanel>
+
+
+            <!-- Form Grid with Bindings -->
+            <Grid Background="LightGreen" Margin="10" DataContext="{StaticResource UserViewModel}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!-- Form Inputs with Bindings -->
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontWeight="Bold">Name:</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Style="{StaticResource FlatTextBox}" Text="{Binding Name}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontWeight="Bold">Age:</TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Style="{StaticResource FlatTextBox}" Text="{Binding Age}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontWeight="Bold" >Current State:</TextBlock>
+                <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Style="{StaticResource FlatComboBox}">
+                    <ComboBoxItem>State 1</ComboBoxItem>
+                    <ComboBoxItem>State 2</ComboBoxItem>
+                    <ComboBoxItem>State 3</ComboBoxItem>
+                </ComboBox>
+                <!-- Submit Button -->
+                <Button Grid.Row="3" Grid.Column="1" Margin="5" HorizontalAlignment="Right" Width="100" Click="SubmitButton_Click">Submit</Button>
+            </Grid>
+        </DockPanel>
+        <!-- Grid for Buttons -->
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button 
+Height="30px"
+Margin="10,10,10,10"
+Content="Button1"/>
+            <Button 
+Height="30px"
+Margin="10,10,10,10"
+Content="Button2"/>
+            <Button 
+Height="30px"
+Margin="10,10,10,10"
+Content="Button3"/>
+            <Button 
+Height="30px"
+Margin="10,10,10,10"
+Content="Button4"/>
+            <Button 
+Height="30px"
+Margin="10,10,10,10"
+Content="Button5"/>
+            <Button 
+Height="30px"
+Margin="10,10,10,10"
+Content="Button6"/>
+        </WrapPanel>
+    </DockPanel>
 </Window>

@@ -1,13 +1,6 @@
-﻿using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace Nieze.WPF.Labs.Lab3
 {
@@ -19,6 +12,20 @@ namespace Nieze.WPF.Labs.Lab3
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Create a DoubleAnimation to animate the opacity of the canvas elements
+            DoubleAnimation animation = new DoubleAnimation();
+            animation.From = 1.0; // Fully opaque
+            animation.To = 0.0; // Fully transparent
+            animation.Duration = TimeSpan.FromSeconds(1); // Animation duration
+
+            // Set the animation to target the Opacity property of each canvas
+            firstCanvas.BeginAnimation(Canvas.OpacityProperty, animation);
+            circleCanvas.BeginAnimation(Canvas.OpacityProperty, animation);
+            secondCanvas.BeginAnimation(Canvas.OpacityProperty, animation);
         }
     }
 }

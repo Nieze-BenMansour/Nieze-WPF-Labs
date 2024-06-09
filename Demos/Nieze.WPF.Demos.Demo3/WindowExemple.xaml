@@ -1,0 +1,54 @@
+﻿<Window x:Class="Nieze.WPF.Demos.Demo3.WindowExemple"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nieze.WPF.Demos.Demo3"
+        mc:Ignorable="d"
+        Title="WindowExemple" Height="450" Width="800">
+    <DockPanel Name="dp1" Grid.IsSharedSizeScope="False" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10">
+
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Button Click="SetTrue" Margin="0,0,10,10">Set IsSharedSizeScope="True"</Button>
+            <Button Click="SetFalse" Margin="0,0,10,10">Set IsSharedSizeScope="False"</Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+
+            <Grid ShowGridLines="True" Margin="0,0,10,0" x:Name="AA">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="FirstColumn"/>
+                    <ColumnDefinition SharedSizeGroup="SecondColumn"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" SharedSizeGroup="FirstRow"/>
+                </Grid.RowDefinitions>
+
+                <Rectangle Fill="Silver" Grid.Column="0" Grid.Row="0" Width="200" Height="100"/>
+                <Rectangle Fill="Blue" Grid.Column="1" Grid.Row="0" Width="150" Height="100"/>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="Bold">First Column</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="0" FontWeight="Bold">Second Column</TextBlock>
+            </Grid>
+
+            <Grid ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition SharedSizeGroup="FirstColumn"/>
+                    <ColumnDefinition SharedSizeGroup="SecondColumn"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" SharedSizeGroup="FirstRow"/>
+                </Grid.RowDefinitions>
+
+                <Rectangle Fill="Silver" Grid.Column="0" Grid.Row="0"/>
+                <Rectangle Fill="Blue" Grid.Column="1" Grid.Row="0"/>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" FontWeight="Bold">First Column</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="0" FontWeight="Bold">Second Column</TextBlock>
+            </Grid>
+
+        </StackPanel>
+
+        <TextBlock Margin="10" DockPanel.Dock="Top" Name="txt1"/>
+    </DockPanel>
+</Window>

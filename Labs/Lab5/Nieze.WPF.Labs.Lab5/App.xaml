@@ -4,6 +4,67 @@
              xmlns:local="clr-namespace:Nieze.WPF.Labs.Lab5"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Style.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <XmlDataProvider x:Key="CostCenters" XPath="/CostCenters/*">
+                <x:XData>
+                    <CostCenters xmlns="">
+                        <CostCenter Number="4032" Name="Sales" />
+                        <CostCenter Number="4034" Name="Marketing" />
+                        <CostCenter Number="5061" Name="Human Resources" />
+                        <CostCenter Number="5062" Name="Research and Development" />
+                    </CostCenters>
+                </x:XData>
+            </XmlDataProvider>
+
+            <XmlDataProvider x:Key="Employees" XPath="/Employees/*">
+                <x:XData>
+                    <Employees xmlns="">
+                        <Employee Name="Terry Adams" Type="FTE" EmployeeNumber="1" />
+                        <Employee Name="Claire O&apos;Donnell" Type="FTE" EmployeeNumber="12345" />
+                        <Employee Name="Palle Peterson" Type="FTE" EmployeeNumber="5678" />
+                        <Employee Name="Amy E. Alberts" Type="CSG" EmployeeNumber="99222" />
+                        <Employee Name="Stefan Hesse" Type="Vendor" EmployeeNumber="-" />
+                    </Employees>
+                </x:XData>
+            </XmlDataProvider>
+
+            <DataTemplate x:Key="ExpenseChartBar">
+                <Grid Style="{StaticResource ExpenseGrid}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
+                    <Rectangle Grid.Row="0"
+                        Height="{Binding Path=Cost}"
+                        Style="{StaticResource ExpenseRectangleBrackground}">
+                        <Rectangle.RenderTransform>
+                            <TranslateTransform X="1"
+                                         Y="1" />
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
+                    <Rectangle Grid.Row="0"
+                        Height="{Binding Path=Cost}"
+                        Style="{StaticResource BarsInExpenseChart}">
+                    </Rectangle>
+                    <Rectangle Grid.Row="0"
+                        Height="{Binding Path=Cost}"
+                        Style="{StaticResource ExpenseChartRectangle}">
+                    </Rectangle>
+                    <Viewbox Grid.Row="1"
+                      Style="{StaticResource ExpenseViewbox}">
+                        <TextBlock Grid.Row="1"
+                            Style="{StaticResource ExpenseRowDescription}"
+                            Text="{Binding Path=Description}" />
+                    </Viewbox>
+                    <TextBlock Style="{StaticResource ExpenseRowCost}"
+                        Text="{Binding Path=Cost}" />
+                </Grid>
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

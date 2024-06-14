@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Nieze.WPF.Labs.Lab1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="-1,0,1,0">
+        <Button Content="Say Hello" HorizontalAlignment="Center" Margin="0,279,0,0" VerticalAlignment="Top" Height="29" Width="92"/>
 
     </Grid>
 </Window>

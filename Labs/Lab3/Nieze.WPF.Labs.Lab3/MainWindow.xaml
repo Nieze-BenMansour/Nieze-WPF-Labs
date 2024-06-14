@@ -118,29 +118,29 @@
         <!-- Grid for Buttons -->
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top">
             <Button 
-Height="30px"
-Margin="10,10,10,10"
-Content="Button1"/>
+                    Height="30px"
+                    Margin="10,10,10,10"
+                    Content="Button1"/>
             <Button 
-Height="30px"
-Margin="10,10,10,10"
-Content="Button2"/>
+                    Height="30px"
+                    Margin="10,10,10,10"
+                    Content="Button2"/>
             <Button 
-Height="30px"
-Margin="10,10,10,10"
-Content="Button3"/>
+                    Height="30px"
+                    Margin="10,10,10,10"
+                    Content="Button3"/>
             <Button 
-Height="30px"
-Margin="10,10,10,10"
-Content="Button4"/>
+                    Height="30px"
+                    Margin="10,10,10,10"
+                    Content="Button4"/>
             <Button 
-Height="30px"
-Margin="10,10,10,10"
-Content="Button5"/>
+                    Height="30px"
+                    Margin="10,10,10,10"
+                    Content="Button5"/>
             <Button 
-Height="30px"
-Margin="10,10,10,10"
-Content="Button6"/>
+                    Height="30px"
+                    Margin="10,10,10,10"
+                    Content="Button6"/>
         </WrapPanel>
     </DockPanel>
 </Window>

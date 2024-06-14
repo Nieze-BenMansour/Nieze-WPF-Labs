@@ -1,13 +1,4 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace Nieze.WPF.Demos.Demo1
 {
@@ -19,6 +10,19 @@ namespace Nieze.WPF.Demos.Demo1
         public MainWindow()
         {
             InitializeComponent();
+
+            var produit = new ProduitViewModel(name: "Savon Liquide", code: "88999");
+
+            if (produit.Name == "Savon Liquide")
+            {
+                NameTb.Text = "Savon";
+            }
+            else 
+            {
+                NameTb.Text = produit.Name; 
+            }
+            
+
         }
     }
 }

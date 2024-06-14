@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentResults" Version="3.15.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nieze.WPF.Lab5.Infrastructure\Nieze.WPF.Lab5.Infrastructure.csproj" />
+    <ProjectReference Include="..\Nieze.WPF.Labs.Lab5.Domain\Nieze.WPF.Labs.Lab5.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

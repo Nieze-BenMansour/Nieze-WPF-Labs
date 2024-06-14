@@ -4,9 +4,46 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nieze.WPF.Labs.Lab5"
+        xmlns:com="clr-namespace:Nieze.WPF.Labs.Lab5.Desktop.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="categoryViewSource"/>
+        <CollectionViewSource x:Key="categoryProductsViewSource" 
+                              Source="{Binding Products, Source={StaticResource categoryViewSource}}"/>
+        <com:ProductCommands x:Key="FD"/>
+    </Window.Resources>
     <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Person"></MenuItem>
+            </Menu>
+            <WrapPanel DockPanel.Dock="Left" Width="80px">
+                <Button Margin="15,10,10,10"  Width="50px" Content="Add"
+                        Command="{Binding AddProductCommandCommand}"
+                        CommandParameter="{Binding ElementName=productsDataGrid, Path=SelectedItem.Id}"></Button>
+                <Button Margin="15,10,10,10"  Width="50px" Content="Update"></Button>
+                <Button Margin="15,10,10,10"  Width="50px" Content="Details"></Button>
+                <Button Margin="15,10,10,10"  Width="50px" Content="Delete"></Button>
+            </WrapPanel>
+            <TextBlock Text=" XYZ company" DockPanel.Dock="Bottom"></TextBlock>
+
+            <DataGrid x:Name="productsDataGrid" AutoGenerateColumns="False" 
+          ItemsSource="{Binding Source={StaticResource categoryViewSource}}" 
+          Margin="13,13,43,229" IsReadOnly="False"
+                      IsEnabled="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id}" Header="Id" 
+                            Width="250"/>
+                    <DataGridTextColumn Binding="{Binding Name}" Header="Name" 
+                            Width="250"/>
+
+                    <DataGridTextColumn Binding="{Binding SubCategoryName}"
+                             Header="Sub Category" Width="250"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
 
     </Grid>
 </Window>

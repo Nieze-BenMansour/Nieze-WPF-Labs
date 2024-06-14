@@ -1,4 +1,4 @@
-﻿using FormationWPF.Lab2;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.ComponentModel;
 using System.Windows;
 
@@ -20,9 +20,9 @@ namespace Nieze.WPF.Labs.Lab2
             get { return _isNameNeeded; }
             set
             {
-                if (Set(ref _isNameNeeded, value))
+                if (SetProperty(ref _isNameNeeded, value))
                 {
-                    RaisePropertyChanged(nameof(GreetingVisibility));
+                    OnPropertyChanged(nameof(GreetingVisibility));
                 }
             }
         }

@@ -1,0 +1,19 @@
+﻿<Window x:Class="Nieze.WPF.Demos.Demo4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nieze.WPF.Demos.Demo4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="193.333" Margin="20,20,0,0"     
+                VerticalAlignment="Top" Width="400.666" Background="#FFF5BDBD"     
+                VirtualizingStackPanel.VirtualizationMode="Recycling"/>
+                            <Button x:Name="LoadDataButton" Content="Load Data" HorizontalAlignment="Left"     
+                Margin="20,18.666,0,0" VerticalAlignment="Top" Width="120.333" Height="29.667"     
+                Click="LoadDataButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

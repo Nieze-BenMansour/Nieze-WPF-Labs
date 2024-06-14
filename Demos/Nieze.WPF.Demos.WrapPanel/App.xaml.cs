@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using System.Configuration;
+using System.Data;
+using System.Windows;
 
-namespace Nieze.WPF.Demos.Demo1
+namespace Nieze.WPF.Demos.WrapPanel
 {
     /// <summary>
     /// Interaction logic for App.xaml

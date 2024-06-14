@@ -1,4 +1,4 @@
-﻿using FormationWPF.Lab2;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.ComponentModel;
 using System.Windows.Threading;
 
@@ -17,7 +17,7 @@ namespace Nieze.WPF.Labs.Lab2
             // setup _timer to refresh CurrentTime
             _timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
             //_timer.Tick += (sender, o) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTime)));
-            _timer.Tick += (sender, o) => RaisePropertyChanged(nameof(CurrentTime));
+            _timer.Tick += (sender, o) => OnPropertyChanged(nameof(CurrentTime));
             _timer.Start();
         }
     }

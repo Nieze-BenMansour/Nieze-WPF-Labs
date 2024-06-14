@@ -8,12 +8,12 @@ public class ProductNameValidationRule : ValidationRule
 {
     public override ValidationResult Validate(object value, CultureInfo cultureInfo)
     {
-        var pattern =
-            @"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*";
+        var pattern = @"^[a-zA-Z]+$";
+
         if (!Regex.IsMatch((string)value, pattern))
         {
-            var msg = $"{value} is not a valid email address.";
-            return new ValidationResult(false, msg);
+            var message = $"{value} is not a valid, Input must contain only alphabetic characters (A-Z, a-z). No numbers, spaces, or special characters are allowed.";
+            return new ValidationResult(false, message);
         }
 
         return new ValidationResult(true, null);

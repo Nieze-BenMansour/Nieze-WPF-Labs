@@ -13,8 +13,10 @@ namespace Nieze.WPF.Labs.Lab5.Desktop
         public AddProductWindow(int currentId)
         {
             InitializeComponent();
+
             if(currentId == 0)
             {
+                DataContext = new ProductAddOrUpdateViewModel();
                 return;
             }
 

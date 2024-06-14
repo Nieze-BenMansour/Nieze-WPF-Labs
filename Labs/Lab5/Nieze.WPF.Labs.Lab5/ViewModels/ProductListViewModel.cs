@@ -1,13 +1,52 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Nieze.WPF.Labs.Lab5.Domain;
-using System.Windows;
 
 namespace Nieze.WPF.Labs.Lab5.Desktop.ViewModels;
 
 public record ProductListViewModel(int Id, string Name, string SubCategoryName);
 
-public record ProductAddOrUpdateViewModel(int Id, string Name, string SubCategoryName, string Description);
+[ObservableObject]
+public partial class ProductAddOrUpdateViewModel 
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string SubCategoryName { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+
+    [RelayCommand]
+    public void AddOrUpdateProduct()
+    {
+        IProductService productService = new ProductService();
+
+        if (Id == 0)
+        {
+            var productToAdd = new Product()
+            {
+                Name = Name,
+                SubCategoryName = SubCategoryName,
+                Description = Description,
+            };
+            productService.Add(productToAdd);
+
+            MessageBox.Show("Product added successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            return;
+        }
+
+        var product = new Product()
+        {
+            Name = Name,
+            SubCategoryName = SubCategoryName,
+            Description = Description,
+            Id = Id
+        };
+
+        productService.Update(product);
+
+        MessageBox.Show("Product updated successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+    }
+}
 
 public static class ProductExtensions
 {
@@ -25,8 +64,36 @@ public static class ProductExtensions
 public partial class ProductCommands : ObservableObject
 {
     [RelayCommand]
-    public void AddProductCommand(int id)
+    public void AddProduct()
+    {
+        new AddProductWindow(0).Show();
+    }
+
+    [RelayCommand]
+    public void UpdateProduct(int id)
     {
         new AddProductWindow(id).Show();
+    }
+
+    [RelayCommand]
+    public void DeleteProduct(int id)
+    {
+        MessageBoxResult result = MessageBox.Show(
+                "Do you want to delete this product?",
+                "Delete Product",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
+
+        if (result == MessageBoxResult.Yes)
+        {
+            IProductService productService = new ProductService();
+            productService.Delete(id);
+            MessageBox.Show("Product deleted successfully.");
+        }
+        else
+        {
+            MessageBox.Show("Product deleted canceled.");
+        }
     }
 }

@@ -32,6 +32,8 @@ public class ProductService : IProductService
         }
 
         context.Products.Remove(product);
+        context.SaveChanges();
+
         return Result.Ok();
     }
 
@@ -74,7 +76,7 @@ public class ProductService : IProductService
 
         using var context = new ProductContext();
 
-        var productToUpdate = context.Products.Find(product.Id);
+        var productToUpdate = context.Products.FirstOrDefault(t => t.Id == product.Id);
 
         if (productToUpdate is null)
         {
@@ -86,6 +88,7 @@ public class ProductService : IProductService
         productToUpdate.SubCategoryName = product.SubCategoryName;
 
         context.Products.Update(productToUpdate);
+        context.SaveChanges();
         return Result.Ok();
     }
 }

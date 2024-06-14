@@ -20,11 +20,12 @@
             </Menu>
             <WrapPanel DockPanel.Dock="Left" Width="80px">
                 <Button Margin="15,10,10,10"  Width="50px" Content="Add"
-                        Command="{Binding AddProductCommandCommand}"
+                        Command="{Binding AddProductCommand}" ></Button>
+                <Button Margin="15,10,10,10"  Width="50px" Content="Update"  Command="{Binding UpdateProductCommand}"
                         CommandParameter="{Binding ElementName=productsDataGrid, Path=SelectedItem.Id}"></Button>
-                <Button Margin="15,10,10,10"  Width="50px" Content="Update"></Button>
                 <Button Margin="15,10,10,10"  Width="50px" Content="Details"></Button>
-                <Button Margin="15,10,10,10"  Width="50px" Content="Delete"></Button>
+                <Button Margin="15,10,10,10"  Width="50px" Content="Delete" Command="{Binding DeleteProductCommand}"
+                        CommandParameter="{Binding ElementName=productsDataGrid, Path=SelectedItem.Id}"></Button>
             </WrapPanel>
             <TextBlock Text=" XYZ company" DockPanel.Dock="Bottom"></TextBlock>
 

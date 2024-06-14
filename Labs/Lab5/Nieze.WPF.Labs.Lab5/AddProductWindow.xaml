@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:com="clr-namespace:Nieze.WPF.Labs.Lab5.Desktop.ViewModels"
         xmlns:localValidation="clr-namespace:Nieze.WPF.Labs.Lab5.Desktop.Validations"
         xmlns:local="clr-namespace:Nieze.WPF.Labs.Lab5.Desktop"
         mc:Ignorable="d"
@@ -15,6 +16,7 @@
         <DataTemplate x:Key="CostCenterTemplate">
             <TextBlock Text="{Binding XPath=@Name}" />
         </DataTemplate>
+        <com:ProductAddOrUpdateViewModel x:Key="PAU" />
     </Window.Resources>
 
     <Grid>
@@ -122,9 +124,11 @@ Grid.Row="2">
                 </ComboBox>
 
                 <!--Command="local:MainWindow.CreateExpenseReportCommand"-->
-                <Button Name="createExpenseReportButton" Style="{StaticResource CommandButton}" Grid.Column="1"
-                Grid.Row="5" 
-                AutomationProperties.AcceleratorKey="Ctrl+Shift+C">
+                <Button Name="createExpenseReportButton" Style="{StaticResource CommandButton}" 
+                        Command="{Binding AddOrUpdateProductCommand}"
+                        Grid.Column="1"
+                        Grid.Row="5" 
+                        AutomationProperties.AcceleratorKey="Ctrl+Shift+C">
                     Create Product
                     <Button.ToolTip>
                         <TextBlock>Opens a dialog for creating expense report</TextBlock>
